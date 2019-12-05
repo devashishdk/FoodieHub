@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BillGenerateActivity">
+
+    <Button
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text=">"
+        android:padding="20dp"
+        android:textSize="18sp"
+        android:layout_gravity="end"
+        android:textColor="@color/colorGreen"
+        android:scaleType="fitCenter"
+        android:gravity="center"
+        android:id="@+id/proceed_alter"
+        android:background="@drawable/forward_button"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextAppearance="@style/QText"
+        android:elevation="10dp"
+        >
+        <com.devashishthakur.fooddelivery.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Elephant"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:id="@+id/linear_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/linearChoose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linearViewAddClear"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.devashishthakur.fooddelivery.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="12sp"
+                android:text="Choose item from here"/>
+            <Spinner
+                android:id="@+id/itemList"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                ></Spinner>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <com.devashishthakur.fooddelivery.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:text="Quantity from here"/>
+        <Spinner
+            android:id="@+id/itemNo"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"></Spinner>
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/linearChoose">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.devashishthakur.fooddelivery.MyTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Current Item Price "
+                android:textSize="16sp" />
+
+            <com.devashishthakur.fooddelivery.MyTextView
+                android:id="@+id/currentPrice"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="50"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <com.devashishthakur.fooddelivery.MyTextView
+            android:id="@+id/totalPriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="26dp"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearViewAddClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+
+        >
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="Add"
+            android:background="@drawable/outline_green_button"
+            android:layout_gravity="end"
+            android:textColor="@color/colorGreen"
+            android:id="@+id/addView"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="Delete All"
+            android:layout_gravity="end"
+            android:background="@drawable/outline_red_button"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/clearView"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+
+            />
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Proceed"
+            android:layout_gravity="end"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@android:color/white"
+            android:id="@+id/proceed"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</RelativeLayout>
